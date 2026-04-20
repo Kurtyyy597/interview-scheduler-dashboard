@@ -1,0 +1,363 @@
+/* Interview.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.interview-wrapper {
+  min-height: 100vh;
+  padding: 32px 20px;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.empty-state {
+  max-width: 720px;
+  margin: 48px auto 0;
+  padding: 32px 24px;
+  border: 1px solid #1f2937;
+  border-radius: 18px;
+  background: #111827;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.error-text {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.create {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.create:hover {
+  background: #1d4ed8;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+}
+
+.create:active {
+  transform: translateY(1px);
+}
+
+.create:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(15, 23, 42, 0.9),
+    0 0 0 6px rgba(96, 165, 250, 0.35);
+}
+
+/* Optional utility section if your child components inherit layout nicely */
+.interview-wrapper > * {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .interview-wrapper {
+    padding: 24px 16px;
+  }
+
+  .empty-state {
+    margin-top: 32px;
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+
+  .error-text {
+    font-size: 14px;
+  }
+
+  .create {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .interview-wrapper {
+    padding: 20px 12px;
+  }
+
+  .empty-state {
+    padding: 20px 16px;
+  }
+}
+
+.bulk-actions-container {
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  margin-bottom: 16px;
+}
+
+.bulk-actions-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #2a2f3a;
+  border-radius: 14px;
+  background: rgba(20, 24, 33, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.bulk-actions-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bulk-actions-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.bulk-actions-text {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.bulk-actions-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mark-bulk-cancelled,
+.mark-bulk-complete {
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mark-bulk-cancelled:hover,
+.mark-bulk-complete:hover {
+  transform: translateY(-1px);
+}
+
+.mark-bulk-cancelled:active,
+.mark-bulk-complete:active {
+  transform: translateY(0);
+}
+
+.mark-bulk-cancelled {
+  background: #3a1d22;
+  color: #fca5a5;
+  border: 1px solid #5b2630;
+}
+
+.mark-bulk-cancelled:hover {
+  background: #4a2229;
+  box-shadow: 0 6px 18px rgba(127, 29, 29, 0.28);
+}
+
+.mark-bulk-complete {
+  background: #173126;
+  color: #86efac;
+  border: 1px solid #24503c;
+}
+
+.mark-bulk-complete:hover {
+  background: #1d3b2d;
+  box-shadow: 0 6px 18px rgba(22, 101, 52, 0.28);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 20px;
+  border: 1px dashed #2f3542;
+  border-radius: 14px;
+  background: #151922;
+  text-align: center;
+}
+
+.error-text {
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
+.create {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.create:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.create:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .interview-wrapper {
+    padding: 16px;
+  }
+
+  .bulk-actions-card {
+    padding: 12px 14px;
+  }
+
+  .bulk-actions-buttons {
+    gap: 8px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .interview-wrapper {
+    padding: 12px;
+  }
+
+  .bulk-actions-container {
+    top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .bulk-actions-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .bulk-actions-info {
+    gap: 2px;
+  }
+
+  .bulk-actions-count {
+    font-size: 13px;
+  }
+
+  .bulk-actions-text {
+    font-size: 12px;
+  }
+
+  .bulk-actions-buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .mark-bulk-cancelled,
+  .mark-bulk-complete {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .empty-state {
+    padding: 32px 16px;
+  }
+
+  .create {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .bulk-actions-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .mark-bulk-cancelled,
+  .mark-bulk-complete {
+    font-size: 12px;
+  }
+
+  .bulk-actions-card {
+    border-radius: 12px;
+  }
+}
+
+.mark-bulk-scheduled {
+  background: #1e293b; /* dark blue-gray */
+  color: #93c5fd;      /* soft blue text */
+  border: 1px solid #334155;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mark-bulk-scheduled:hover {
+  background: #273549;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.25);
+  transform: translateY(-1px);
+}
+
+.mark-bulk-scheduled:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .bulk-actions-buttons {
+    grid-template-columns: 1fr;
+  }
+}

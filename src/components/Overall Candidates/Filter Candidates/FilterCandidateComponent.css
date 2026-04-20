@@ -1,0 +1,167 @@
+/* FilterCandidateComponent.css */
+
+:root {
+  --fc-surface: #111827;
+  --fc-surface-2: #1f2937;
+  --fc-border: rgba(255, 255, 255, 0.08);
+  --fc-border-strong: rgba(255, 255, 255, 0.14);
+  --fc-text: #f3f4f6;
+  --fc-text-muted: #9ca3af;
+  --fc-placeholder: #6b7280;
+  --fc-primary: #3b82f6;
+  --fc-primary-ring: rgba(59, 130, 246, 0.22);
+  --fc-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  --fc-radius-xl: 20px;
+  --fc-radius-lg: 14px;
+  --fc-transition: 0.2s ease;
+}
+
+.filter-container,
+.filter-container * {
+  box-sizing: border-box;
+}
+
+.filter-container {
+  width: 100%;
+}
+
+.filter-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.01)
+    ),
+    var(--fc-surface);
+  border: 1px solid var(--fc-border);
+  border-radius: var(--fc-radius-xl);
+  box-shadow: var(--fc-shadow);
+}
+
+/* Search takes the full top row */
+.filter-card > .filter-group:first-child {
+  grid-column: 1 / -1;
+}
+
+.filter-card > .filter-group {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-card .label {
+  display: block;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--fc-text-muted);
+  letter-spacing: 0.01em;
+}
+
+.filter-card .input,
+.filter-card .select,
+.filter-card input,
+.filter-card select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  display: block;
+  flex: none !important;
+  height: 48px;
+  padding: 0 0.95rem;
+  margin: 0;
+  border: 1px solid var(--fc-border-strong);
+  border-radius: var(--fc-radius-lg);
+  background: var(--fc-surface-2);
+  color: var(--fc-text);
+  font-size: 0.95rem;
+  line-height: 1;
+  outline: none;
+  box-shadow: none;
+  transition:
+    border-color var(--fc-transition),
+    box-shadow var(--fc-transition),
+    background-color var(--fc-transition);
+}
+
+.filter-card .input::placeholder,
+.filter-card input::placeholder {
+  color: var(--fc-placeholder);
+}
+
+.filter-card .input:hover,
+.filter-card .select:hover,
+.filter-card input:hover,
+.filter-card select:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: #243041;
+}
+
+.filter-card .input:focus,
+.filter-card .select:focus,
+.filter-card input:focus,
+.filter-card select:focus {
+  border-color: var(--fc-primary);
+  box-shadow: 0 0 0 4px var(--fc-primary-ring);
+  background: #243041;
+}
+
+.filter-card .select,
+.filter-card select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 2.75rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #94a3b8 50%),
+    linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.filter-card .select option,
+.filter-card select option {
+  background: var(--fc-surface);
+  color: var(--fc-text);
+}
+
+@media (max-width: 900px) {
+  .filter-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-card > .filter-group:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-card {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.9rem;
+    border-radius: 16px;
+  }
+
+  .filter-card > .filter-group:first-child {
+    grid-column: auto;
+  }
+
+  .filter-card .input,
+  .filter-card .select,
+  .filter-card input,
+  .filter-card select {
+    height: 46px;
+    font-size: 0.94rem;
+  }
+}

@@ -1,0 +1,130 @@
+.edit-interview-wrapper {
+  min-height: 100vh;
+  padding: 40px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 25%),
+    linear-gradient(180deg, #09101d 0%, #0b1020 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.edit-interview-wrapper > * {
+  width: 100%;
+  max-width: 960px;
+  animation: editFadeSlideIn 0.4s ease;
+}
+
+.title-label {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+}
+
+.highlight-title {
+  color: #8b5cf6;
+  font-weight: 800;
+  text-shadow: 0 0 18px rgba(139, 92, 246, 0.35);
+}
+
+.success {
+  margin: 0;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.success .highlight {
+  margin: 0 4px;
+}
+
+@keyframes editFadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .edit-interview-wrapper {
+    padding: 20px 14px;
+    align-items: stretch;
+  }
+
+  .edit-interview-wrapper > * {
+    max-width: 100%;
+  }
+
+  .title-label {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-interview-wrapper {
+    padding: 16px 10px;
+  }
+
+  .title-label {
+    font-size: 1.4rem;
+  }
+}
+
+/* Success message wrapper */
+.success {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.4;
+}
+
+/* Highlighted interview title */
+.highlight {
+  color: #8b5cf6;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(139, 92, 246, 0.12);
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.35);
+  transition: all 0.2s ease;
+}
+
+/* Subtle hover glow (feels premium) */
+.highlight:hover {
+  background: rgba(139, 92, 246, 0.2);
+  text-shadow: 0 0 14px rgba(139, 92, 246, 0.6);
+}
+
+/* Optional: differentiate "updated" vs "added" */
+.success::before {
+  content: "✔";
+  color: #22c55e;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .success {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .highlight {
+    font-size: 0.85rem;
+  }
+}

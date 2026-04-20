@@ -1,0 +1,244 @@
+:root {
+  --bg: #0b1220;
+  --bg-elevated: #111a2e;
+  --card: rgba(17, 26, 46, 0.88);
+  --card-hover: rgba(25, 37, 64, 0.96);
+  --border: rgba(148, 163, 184, 0.18);
+  --border-strong: rgba(148, 163, 184, 0.3);
+  --text-primary: #e5ecf6;
+  --text-secondary: #9aa8c1;
+  --text-muted: #7b8aa5;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.14);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.42);
+  --radius-xl: 22px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --transition: 180ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.06), transparent 24%),
+    var(--bg);
+  color: var(--text-primary);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* Main wrapper */
+.interviewer-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 24px 56px;
+  background: transparent;
+}
+
+/* Page title */
+.interviewer-title {
+  margin: 0 0 28px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Card grid */
+.interviewer-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Clickable card */
+.interviewer-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 22px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    var(--card);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+  overflow: hidden;
+}
+
+.interviewer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(96, 165, 250, 0.12),
+    transparent 28%,
+    transparent 72%,
+    rgba(96, 165, 250, 0.06)
+  );
+  pointer-events: none;
+}
+
+.interviewer-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+  background: var(--card-hover);
+}
+
+.interviewer-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-color: var(--accent);
+}
+
+.interviewer-card:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+/* Each row of label + content */
+.label-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.label-container:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.text-label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.text-content {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+/* Make email feel more distinct */
+.label-container:nth-child(2) .text-content {
+  color: var(--accent);
+}
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .interviewer-wrapper {
+    padding: 32px 20px 48px;
+  }
+
+  .interviewer-card-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .interviewer-card {
+    padding: 20px 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .interviewer-wrapper {
+    padding: 24px 14px 36px;
+  }
+
+  .interviewer-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .interviewer-card-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .interviewer-card {
+    padding: 18px 16px;
+    border-radius: 18px;
+    gap: 14px;
+  }
+
+  .label-container {
+    gap: 4px;
+    padding-bottom: 12px;
+  }
+
+  .text-label {
+    font-size: 0.72rem;
+  }
+
+  .text-content {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+  .interviewer-wrapper {
+    padding-inline: 10px;
+  }
+
+  .interviewer-card {
+    padding: 16px 14px;
+  }
+
+  .text-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .interviewer-card {
+    transition: none;
+  }
+
+  .interviewer-card:hover,
+  .interviewer-card:active {
+    transform: none;
+  }
+}

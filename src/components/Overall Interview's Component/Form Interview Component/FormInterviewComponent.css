@@ -1,0 +1,343 @@
+/* FormInterviewComponent.css - Dark Mode */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.form-wrapper {
+  min-height: 100vh;
+  padding: 32px 20px;
+  background: #0f172a;
+}
+
+.form-top-header {
+  max-width: 760px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.form-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f8fafc;
+}
+
+.btn-cancel,
+.cancel-btn {
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn-cancel:hover,
+.cancel-btn:hover {
+  background: #273449;
+  border-color: #475569;
+}
+
+.btn-cancel:active,
+.cancel-btn:active {
+  transform: translateY(1px);
+}
+
+.form-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.form-card .input,
+.form-card .select,
+.form-card .textarea {
+  width: 100%;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.4;
+  background: #0f172a;
+  color: #f8fafc;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-card .input::placeholder,
+.form-card .textarea::placeholder {
+  color: #64748b;
+}
+
+.form-card .input:hover,
+.form-card .select:hover,
+.form-card .textarea:hover {
+  border-color: #475569;
+}
+
+.form-card .input:focus,
+.form-card .select:focus,
+.form-card .textarea:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.15);
+}
+
+.form-card .textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-card .select {
+  cursor: pointer;
+}
+
+/* Normalize native controls a bit */
+.form-card .select,
+.form-card input[type="date"],
+.form-card input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Calendar / time icon */
+.form-card input[type="date"]::-webkit-calendar-picker-indicator,
+.form-card input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.8;
+  filter: invert(1);
+}
+
+/* Optional: make placeholder-like native date/time text readable in some browsers */
+.form-card input[type="date"],
+.form-card input[type="time"],
+.form-card .select {
+  color-scheme: dark;
+}
+
+.btn-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.text-error {
+  font-size: 13px;
+  color: #f87171;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.btn-action-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-submit {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Modal overlay */
+.modal-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: #111827;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid #1f2937;
+}
+
+.modal-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.modal-title-sub {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.btn-container-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-cancel-modal {
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.btn-cancel-modal:hover {
+  background: #273449;
+  border-color: #475569;
+}
+
+.btn-confirm-discard {
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-confirm-discard:hover {
+  background: #b91c1c;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.28);
+}
+
+.btn-confirm-discard:active,
+.btn-cancel-modal:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form-wrapper {
+    padding: 20px 14px;
+  }
+
+  .form-top-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .form-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .btn-action-container,
+  .btn-container-modal {
+    flex-direction: column;
+  }
+
+  .btn-submit,
+  .cancel-btn,
+  .btn-cancel,
+  .btn-cancel-modal,
+  .btn-confirm-discard {
+    width: 100%;
+  }
+}
+
+.input-readonly {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.subtle-text {
+  font-size: 12px;
+  color: #888;
+  margin-left: 6px;
+}

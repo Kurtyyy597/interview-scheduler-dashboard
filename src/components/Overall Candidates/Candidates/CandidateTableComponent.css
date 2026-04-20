@@ -1,0 +1,333 @@
+.candidate-table-section {
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #f9fafb;
+}
+
+.candidate-table-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.candidate-table-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.candidate-table-subtitle {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+.candidate-table-count {
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: #1f2937;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.candidate-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid #1f2937;
+  background: #0f172a;
+}
+
+.candidate-table-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.candidate-table-container::-webkit-scrollbar-track {
+  background: #111827;
+  border-radius: 999px;
+}
+
+.candidate-table-container::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+.candidate-table-card {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  color: #f9fafb;
+}
+
+.candidate-table-card thead {
+  background: #1e293b;
+}
+
+.candidate-table-card th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #334155;
+  white-space: nowrap;
+}
+
+.candidate-table-card td {
+  padding: 0.95rem 1rem;
+  font-size: 0.92rem;
+  color: #e5e7eb;
+  border-bottom: 1px solid #1f2937;
+  vertical-align: middle;
+}
+
+.candidate-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.candidate-row:hover {
+  background: #172033;
+}
+
+.candidate-row:active {
+  background: #1d2940;
+}
+
+.cell-id {
+  font-family: monospace;
+  color: #93c5fd;
+}
+
+.cell-email {
+  color: #bfdbfe;
+  word-break: break-word;
+}
+
+.cell-skills {
+  max-width: 220px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.cell-resume {
+  white-space: nowrap;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  background: #1d4ed8;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.resume-link:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.resume-link:active {
+  transform: translateY(0);
+}
+
+.stage-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.38rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Stage colors */
+.stage-badge.stage-screening {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.stage-badge.stage-interview {
+  background: rgba(168, 85, 247, 0.15);
+  color: #d8b4fe;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.stage-badge.stage-hired {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.stage-badge.stage-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Status colors */
+.status-badge.status-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.status-badge.status-active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.status-completed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.status-badge.status-cancelled {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.search-highlight {
+  background: #facc15;
+  color: #111827;
+  padding: 0 0.15rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.search-highlight-inline {
+  background: rgba(250, 204, 21, 0.95);
+  color: #111827;
+  padding: 0 0.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.candidate-empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .candidate-table-section {
+    padding: 1rem;
+  }
+
+  .candidate-table-title {
+    font-size: 1.3rem;
+  }
+
+  .candidate-table-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .candidate-table-card th,
+  .candidate-table-card td {
+    padding: 0.85rem 0.85rem;
+    font-size: 0.88rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .candidate-table-section {
+    padding: 0.9rem;
+    border-radius: 16px;
+  }
+
+  .candidate-table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .candidate-table-count {
+    width: fit-content;
+  }
+
+  .candidate-table-title {
+    font-size: 1.15rem;
+  }
+
+  .candidate-table-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .candidate-table-container {
+    border-radius: 14px;
+  }
+
+  .candidate-table-card {
+    min-width: 980px;
+  }
+
+  .candidate-table-card th,
+  .candidate-table-card td {
+    padding: 0.8rem;
+    font-size: 0.84rem;
+  }
+
+  .resume-link {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .stage-badge,
+  .status-badge {
+    font-size: 0.72rem;
+    padding: 0.32rem 0.6rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .candidate-table-section {
+    padding: 0.75rem;
+  }
+
+  .candidate-table-title {
+    font-size: 1.02rem;
+  }
+
+  .candidate-table-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .candidate-table-count {
+    font-size: 0.8rem;
+    padding: 0.55rem 0.85rem;
+  }
+
+  .candidate-table-card {
+    min-width: 900px;
+  }
+}
